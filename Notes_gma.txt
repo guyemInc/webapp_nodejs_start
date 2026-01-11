@@ -149,3 +149,17 @@ sais tu ou positionner ce fichier pour qu'il soit compris par les actions github
 	Aucun déplacement nécessaire - le fichier est au bon endroit. GitHub Actions le détectera automatiquement lors de l'exécution du workflow
 
 git commit et git push pour voir résultat côté github
+> nok
+
+Question s'il sait interpréter : Step 1/7 : FROM node:18-alpine
+	18-alpine: Pulling from library/node
+	no matching manifest for windows/amd64 10.0.26100 in the manifest list entries
+	Error: Process completed with exit code 1.
+
+	Je vais modifier le Dockerfile pour utiliser une image Windows compatible.
+	Le Dockerfile est maintenant configuré pour Windows avec :
+
+		Base image : Windows Server Core 2019
+		Installation Node.js : Télécharge et installe Node.js 18.19.0 via PowerShell
+		Compatibilité : Fonctionnera avec windows-latest dans GitHub Actions
+	Le workflow GitHub devrait maintenant construire correctement l'image Docker sur Windows.
