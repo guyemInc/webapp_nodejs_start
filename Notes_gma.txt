@@ -129,12 +129,12 @@ Instead of running builds on GitLab runners, your build scripts execute on Docke
 -- Objectif : lui demander de créer le fichier dockerfile qui va bien sur ce projet
 
 comprend tu de quel type d'application il s'agit dans ce répertoire ?
-	C'est un projet de démarrage minimaliste pour une application web Node.js/Express.
+WS : 	C'est un projet de démarrage minimaliste pour une application web Node.js/Express.
 sais-tu créer un dockerfile qui puisse exécuter ce code en local sur windows ?
-	J'ai créé un Dockerfile et un .dockerignore pour votre application.
+WS : J'ai créé un Dockerfile et un .dockerignore pour votre application.
 	Le Dockerfile utilise Node.js 18 Alpine, installe les dépendances, expose le port 8099 et lance votre application.
 sais tu ou positionner ce fichier pour qu'il soit compris par les actions github ?
-	Le Dockerfile est déjà correctement positionné à la racine du projet. GitHub Actions le trouvera automatiquement.
+WS : Le Dockerfile est déjà correctement positionné à la racine du projet. GitHub Actions le trouvera automatiquement.
 
 	Configuration actuelle :
 
@@ -156,7 +156,7 @@ Question s'il sait interpréter : Step 1/7 : FROM node:18-alpine
 	no matching manifest for windows/amd64 10.0.26100 in the manifest list entries
 	Error: Process completed with exit code 1.
 
-	Je vais modifier le Dockerfile pour utiliser une image Windows compatible.
+WS : 	Je vais modifier le Dockerfile pour utiliser une image Windows compatible.
 	Le Dockerfile est maintenant configuré pour Windows avec :
 
 		Base image : Windows Server Core 2019
@@ -166,3 +166,9 @@ Question s'il sait interpréter : Step 1/7 : FROM node:18-alpine
 
 Au final, il sur Windows Pro / Family il faut passer via Docker Desktop qui lui déclenche WSL 2 pour Windows.
 	....
+
+Et nouvelle erreur dans Github... évidemment : Il doit y avoir d'autres choses à modifier pour que cela fonctionne. Voici le 		message github : Step 1/7 : FROM node:18-alpine
+		18-alpine: Pulling from library/node
+		no matching manifest for windows/amd64 10.0.26100 in the manifest list entries
+		Error: Process completed with exit code 1.
+WS : Le workflow utilise encore windows-latest au lieu de ubuntu-latest. Je vais vérifier et corriger.
