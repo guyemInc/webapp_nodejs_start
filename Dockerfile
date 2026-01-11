@@ -1,12 +1,5 @@
-# Use Windows Server Core as base image
-FROM mcr.microsoft.com/windows/servercore:ltsc2019
-
-# Install Node.js
-RUN powershell -Command \
-    $url = 'https://nodejs.org/dist/v18.19.0/node-v18.19.0-win-x64.msi'; \
-    Invoke-WebRequest -Uri $url -OutFile 'node.msi'; \
-    Start-Process msiexec.exe -ArgumentList '/i node.msi /quiet' -Wait; \
-    Remove-Item node.msi
+# Use official Node.js Windows image
+FROM node:18-windowsservercore
 
 # Set working directory
 WORKDIR /app
