@@ -115,3 +115,37 @@ Instead of running builds on GitLab runners, your build scripts execute on Docke
 -- Chercher Docker image : Build a Docker image to deploy, run, or push to a registry. 
 --puis Configure
 --puis commit en laissant tout par defaut dans le docker-image.yml
+
+... bon, le fichier généré est un exemple qui ne prend pas du tout en compte le contexte du code
+... suppression depuis Github de toutes les actions en erreur (suite aux commits)
+...	https://github.com/guyemInc/webapp_nodejs_start/actions
+
+
+--
+-- Installation de https://windsurf.com/
+--	Dans : C:\Users\g.malinge\AppData\Local\Programs\Windsurf
+--	Voir aussi : https://docs.windsurf.com/windsurf/getting-started
+
+-- Objectif : lui demander de créer le fichier dockerfile qui va bien sur ce projet
+
+comprend tu de quel type d'application il s'agit dans ce répertoire ?
+	C'est un projet de démarrage minimaliste pour une application web Node.js/Express.
+sais-tu créer un dockerfile qui puisse exécuter ce code en local sur windows ?
+	J'ai créé un Dockerfile et un .dockerignore pour votre application.
+	Le Dockerfile utilise Node.js 18 Alpine, installe les dépendances, expose le port 8099 et lance votre application.
+sais tu ou positionner ce fichier pour qu'il soit compris par les actions github ?
+	Le Dockerfile est déjà correctement positionné à la racine du projet. GitHub Actions le trouvera automatiquement.
+
+	Configuration actuelle :
+
+	Le Dockerfile est à la racine : c:\Informatique_tmp\Perso\Projets\webapp_nodejs_start\Dockerfile
+	Le workflow GitHub existe déjà : .github/workflows/docker-image.yml
+	Le workflow utilise docker build . --file Dockerfile qui cherche le Dockerfile à la racine
+	Le workflow GitHub Actions va :
+
+	Se déclencher sur push/PR vers la branche main
+	Utiliser windows-latest comme runner
+	Construire l'image Docker avec votre Dockerfile
+	Aucun déplacement nécessaire - le fichier est au bon endroit. GitHub Actions le détectera automatiquement lors de l'exécution du workflow
+
+git commit et git push pour voir résultat côté github
