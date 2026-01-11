@@ -1,0 +1,78 @@
+Janvier 2026
+
+Tutoriel : https://www.youtube.com/watch?v=U9TozNEs8q0
+
+Installation nodejs
+	+ installation des dépdances
+
+	C:\Users\g.malinge>node -v
+v25.2.1
+
+Premier projet ;
+	C:\Informatique\_tmp\Perso\Projets\webapp_nodejs_start
+
+Passer de la console à un website
+	https://www.youtube.com/watch?v=LVdw98jkfkk
+	prerequis :
+		VisualStudio
+		nodejs
+		npm
+
+	npm -v
+	11.6.2
+
+Branché sur repository github
+
+npm init
+
+Press ^C at any time to quit.
+package name: (webapp_nodejs_start)
+version: (1.0.0)
+description:
+entry point: (index.js)
+test command:
+git repository: https://github.com/guyemInc/webapp_nodejs_start.git
+keywords:
+author:
+license: (ISC)
+type: (commonjs)
+About to write to C:\Informatique\_tmp\Perso\Projets\webapp_nodejs_start\package.json:
+
+{
+  "name": "webapp_nodejs_start",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guyemInc/webapp_nodejs_start.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/guyemInc/webapp_nodejs_start/issues"
+  },
+  "homepage": "https://github.com/guyemInc/webapp_nodejs_start#readme"
+}
+
+Cliquer sur ok pour la création du fichier
+
+npm install express --save
+
+> Cela installe les dépendances dans le dossier node_modules
+
+Création du fichier index.js
+
+Puis du fichier public/index.html
+
+Depuis la console
+	node index.js
+
+Ouvrir navigateur : http://localhost:8099/
+> C'est bien ok
+
+
