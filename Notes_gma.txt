@@ -164,5 +164,5 @@ Question s'il sait interpréter : Step 1/7 : FROM node:18-alpine
 		Compatibilité : Fonctionnera avec windows-latest dans GitHub Actions
 	Le workflow GitHub devrait maintenant construire correctement l'image Docker sur Windows.
 
-Nouvelle erreur : failure in a Windows system call: The container operating system does not match the host operating system. (0xc0370101)
-Utilise maintenant l'image officielle node:18-windowsservercore qui inclut déjà Node.js. C'est plus simple et devrait éviter les problèmes de compatibilité Windows.
+Au final, il sur Windows Pro / Family il faut passer via Docker Desktop qui lui déclenche WSL 2 pour Windows.
+	....

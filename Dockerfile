@@ -1,5 +1,5 @@
-# Use official Node.js Windows image
-FROM node:18-windowsservercore-ltsc2022
+# Use official Node.js runtime as base image
+FROM node:18-alpine
 
 # Set working directory
 WORKDIR /app
