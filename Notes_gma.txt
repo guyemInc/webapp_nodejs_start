@@ -180,3 +180,6 @@ WS : Pour utiliser l'image :
 	bash
 	docker run -p 8099:8099 my-image-name:timestamp
 	L'artifact sera disponible pendant 30 jours par défaut.
+
+Tjrs pas d'artifact... Ok je vois bien Artifact mais il est vide. L'alternative proposée règlera t elle le sujet ?
+WS : Oui, l'alternative devrait régler le problème. L'artifact était probablement vide à cause du timestamp dynamique qui créait un nom d'image variable.
