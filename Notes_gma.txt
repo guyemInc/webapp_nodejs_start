@@ -97,4 +97,21 @@ Your public key has been saved in /c/Users/g.malinge/.ssh/id_ed25519.pub
     git push -u origin main
 
 
+--
+-- Cote dockerHub c'est un peu compliqué... et au final j'arrive à :
+--	How it works
 
+Instead of running builds on GitHub runners, your builds execute on Docker's cloud infrastructure while maintaining the same familiar actions and configuration.
+
+Ou aussi : Integrate with GitLab CI/CD
+Integrating with GitLab CI/CD allows you to speed up your CI builds with a shared cache.
+How it works
+
+Instead of running builds on GitLab runners, your build scripts execute on Docker's cloud infrastructure.
+
+--
+-- Retour sur github, dans la zone Actions
+--	https://github.com/guyemInc/webapp_nodejs_start/actions/new?category=none&query=docker
+-- Chercher Docker image : Build a Docker image to deploy, run, or push to a registry. 
+--puis Configure
+--puis commit en laissant tout par defaut dans le docker-image.yml
