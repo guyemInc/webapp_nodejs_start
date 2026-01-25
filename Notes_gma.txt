@@ -239,3 +239,15 @@ WS : Oui, l'alternative devrait régler le problème. L'artifact était probable
 	On a bien un run en cours après git push et la présence d'un artifact ;
 		https://github.com/guyemInc/webapp_nodejs_start/actions/runs/21336301995#artifacts
 
+25/01/2026 - Stopper le conteneur docker
+	docker stop webapp-container
+	# Contrôle
+	docker ps -a
+	# Effacer conteneur :
+	docker rm webapp-container
+
+	# Arrêt du service ne 8080 hors dockerfile
+	netstat -ano | findstr :8080
+		#  TCP    0.0.0.0:8080           0.0.0.0:0              LISTENING       8600
+	taskkill /F /PID 8600
+
