@@ -228,3 +228,14 @@ WS : Oui, l'alternative devrait régler le problème. L'artifact était probable
 
 		# Voir les logs du conteneur
 		docker logs webapp-container
+
+	git add *
+	git commit -m "Mise à jour du port 8080 vers 8099 et documentation"
+	git push
+	
+25/01/2026 - Contrôle côté github :
+
+	Dans https://github.com/guyemInc/webapp_nodejs_start/actions/runs
+	On a bien un run en cours après git push et la présence d'un artifact ;
+		https://github.com/guyemInc/webapp_nodejs_start/actions/runs/21336301995#artifacts
+
