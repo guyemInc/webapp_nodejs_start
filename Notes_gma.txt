@@ -183,3 +183,48 @@ WS : Pour utiliser l'image :
 
 Tjrs pas d'artifact... Ok je vois bien Artifact mais il est vide. L'alternative proposée règlera t elle le sujet ?
 WS : Oui, l'alternative devrait régler le problème. L'artifact était probablement vide à cause du timestamp dynamique qui créait un nom d'image variable.
+
+25/01/2026 - Déploiement sur poste perso de ce test
+	gravo@LAPTOP-CCEPA44H MINGW64 /d/data_guillaume/Projets/20260126 Sample Web dockerfile
+	$ git clone https://github.com/guyemInc/webapp_nodejs_start.git
+
+	Depuis Winsurl, positionnement sur le répertoire : 
+		D:\data_guillaume\Projets\20260126 Sample Web dockerfile\webapp_nodejs_start
+	
+	Il comprend qu'il s'agit qu'il s'agit d'un projet nodejs et sait le démarrer
+		Ok en localhost 8080
+
+	Ensuite, à ma demande, il trouve bien un dockerfile permettant de lancer la même application
+		Windsurf me propose des commandes que je ne parviens pas à lancer
+	Lui y parvient en mettant au préalable à jour le port d'exécution en 8099
+
+	Je place ici mes notes pendant que WindSurf met à jour le README etc avec les dernière mises à jour
+		Ps, le http://localhost:8099/ via dockerfile fonctionne parfaitement suite à l'exécution du dockerfile
+	
+	Pour mémoire : 
+	…\webapp_nodejs_start > docker --version
+		Docker version 29.1.3, build f52814d
+	#WS :  construire l'image Docker pour votre application.
+	…\webapp_nodejs_start > docker build -t webapp-nodejs .
+
+	#WS :  L'image Docker a été construite avec succès. 
+	#WS :  Je vais maintenant lancer un conteneur à partir de cette image.
+	…\webapp_nodejs_start > docker run -p 8099:8099 -d --name webapp-container webapp-nodejs
+
+	#WS : Vous pouvez accéder à l'application en ouvrant votre navigateur à l'adresse : http://localhost:8099
+
+	#WS : Pour gérer le conteneur, voici quelques commandes utiles :
+		# Voir les conteneurs en cours d'exécution
+		docker ps
+
+		# Arrêter le conteneur
+		docker stop webapp-container
+
+		# Redémarrer le conteneur
+		docker start webapp-container
+
+		# Supprimer le conteneur (après l'avoir arrêté)
+		docker rm webapp-container
+
+		# Voir les logs du conteneur
+		docker logs webapp-container
